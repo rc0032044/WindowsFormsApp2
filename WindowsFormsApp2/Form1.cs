@@ -37,9 +37,23 @@ namespace WindowsFormsApp2
             button3.Hide();
             textBox1.Hide();
             textBox2.Hide();
-
-
+            textBox3.Hide();
+            textBox4.Hide();
+            textBox5.Hide();
+            button4.Hide();
+            textBox6.Hide();
+            textBox7.Hide();
+            textBox8.Hide();
+            textBox9.Hide();
+            button5.Hide();
+            textBox10.Hide();
+            textBox11.Hide();
+            textBox12.Hide();
+            textBox13.Hide();
+            textBox14.Hide();
+            button6.Hide();
         }
+        
 
         private async void button1_Click_1(object sender, EventArgs e)
         {
@@ -84,6 +98,10 @@ namespace WindowsFormsApp2
         {
             if (comboBox1.SelectedIndex == 0)
             {
+                Hideall();
+                button1.Show();
+                label1.Show();
+                comboBox1.Show();
                 pictureBox1.Show();
                 textBox1.Show();
                 textBox2.Show();
@@ -97,6 +115,13 @@ namespace WindowsFormsApp2
                 label1.Show();
                 comboBox1.Show();
                 pictureBox2.Show();
+                textBox3.Show();
+                textBox4.Show();
+                textBox5.Show();
+                textBox3.BringToFront();
+                textBox4.BringToFront();
+                textBox5.BringToFront();
+                button4.Show();
                
 
             }
@@ -107,6 +132,15 @@ namespace WindowsFormsApp2
                 label1.Show();
                 comboBox1.Show();
                 pictureBox3.Show();
+                textBox6.Show();
+                textBox7.Show();
+                textBox8.Show();
+                textBox9.Show();
+                textBox6.BringToFront();
+                textBox7.BringToFront();
+                textBox8.BringToFront();
+                textBox9.BringToFront();
+                button5.Show();
             }
             else if (comboBox1.SelectedIndex == 3)
             {
@@ -115,6 +149,17 @@ namespace WindowsFormsApp2
                 label1.Show();
                 comboBox1.Show();
                 pictureBox4.Show();
+                textBox10.Show();
+                textBox11.Show();
+                textBox12.Show();
+                textBox13.Show();
+                textBox14.Show();
+                textBox10.BringToFront();
+                textBox11.BringToFront();
+                textBox12.BringToFront();
+                textBox13.BringToFront();
+                textBox14.BringToFront();
+                button6.Show();
             }
             else
             {
@@ -140,11 +185,76 @@ namespace WindowsFormsApp2
         }
 
         private void button3_Click(object sender, EventArgs e)
+        
         {
             double r1 = Convert.ToDouble(textBox1.Text);
             double r2 = Convert.ToDouble(textBox2.Text);
 
-            r1 = r1 + r2;
+            if (r1 > 0) 
+                try
+                {
+                    if (r2 < 0)
+                        MessageBox.Show("Dont be an idiot. Enter a positive number!");
+                    else
+                        r1 = r1 + r2;
+                    label3.Text = Convert.ToString(r1);
+                }
+                catch
+                {
+                    MessageBox.Show("dont be an idiot. Type in a number!");
+                }
+            
+            else
+                MessageBox.Show("type in a positive number.");
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double r1 = Convert.ToDouble(textBox3.Text);
+                double r2 = Convert.ToDouble(textBox4.Text);
+                double r3 = Convert.ToDouble(textBox5.Text);
+
+                r1 = r1 + r2 + r3;
+                label3.Text = Convert.ToString(r1);
+            }
+            catch
+            {
+                MessageBox.Show("dont be an idiot. type in a number");
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            double r1 = Convert.ToDouble(textBox6.Text);
+            double r2 = Convert.ToDouble(textBox7.Text);
+            double r3 = Convert.ToDouble(textBox8.Text);
+            double r4 = Convert.ToDouble(textBox9.Text);
+
+            r1 = r1 + r2 + r3 + r4;
+            label3.Text = Convert.ToString(r1);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            double r1 = Convert.ToDouble(textBox10.Text);
+            double r2 = Convert.ToDouble(textBox11.Text);
+            double r3 = Convert.ToDouble(textBox12.Text);
+            double r4 = Convert.ToDouble(textBox13.Text);
+            double r5 = Convert.ToDouble(textBox14.Text);
+            r1 = r1 + r2 + r3 + r4 + r5;
             label3.Text = Convert.ToString(r1);
         }
     }
