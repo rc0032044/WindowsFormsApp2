@@ -115,11 +115,6 @@ namespace WindowsFormsApp2
             comboBox2.Show();
 
         }
- 
-
-
-
-
 // Series circuit code //
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -207,11 +202,6 @@ namespace WindowsFormsApp2
             Hideall();
             button2.Show();
         }
-
-
-
-
-
 // Series circuit calculate button code //
         private void button3_Click(object sender, EventArgs e)
 
@@ -265,29 +255,29 @@ namespace WindowsFormsApp2
 
             label3.Text = Convert.ToString(r1);
         }
-
-
-
-
-
 // Series circuit numerical restriction //
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
-            {
-                e.Handled = false;
-            }
+		{
+			if (isNum(e))
+			{
+				e.Handled = false;
+			}
 
-            else
-            {
-                e.Handled = true;
-            }
-        }
+			else
+			{
+				e.Handled = true;
+			}
+		}
 
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+		private static bool isNum(KeyPressEventArgs e)
+		{
+			return (e.KeyChar >= '0' && e.KeyChar <= '9') || e.KeyChar == '.' || e.KeyChar == 8;
+		}
+
+		private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -301,7 +291,7 @@ namespace WindowsFormsApp2
 
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -314,7 +304,7 @@ namespace WindowsFormsApp2
 
         private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -327,7 +317,7 @@ namespace WindowsFormsApp2
 
         private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -340,7 +330,7 @@ namespace WindowsFormsApp2
 
         private void textBox6_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -353,7 +343,7 @@ namespace WindowsFormsApp2
 
         private void textBox7_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -366,7 +356,7 @@ namespace WindowsFormsApp2
 
         private void textBox8_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -379,7 +369,7 @@ namespace WindowsFormsApp2
 
         private void textBox9_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -392,7 +382,7 @@ namespace WindowsFormsApp2
 
         private void textBox10_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -405,7 +395,7 @@ namespace WindowsFormsApp2
 
         private void textBox11_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -418,7 +408,7 @@ namespace WindowsFormsApp2
 
         private void textBox12_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -431,7 +421,7 @@ namespace WindowsFormsApp2
 
         private void textBox13_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -444,7 +434,7 @@ namespace WindowsFormsApp2
 
         private void textBox14_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -454,11 +444,6 @@ namespace WindowsFormsApp2
                 e.Handled = true;
             }
         }
-
-        
-        
-
-
 //code for parrallel circuit calculator//
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -541,11 +526,6 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Please select an option from the drop down menu!");
             }
         }
-
-        
-        
-        
-        
 //Parallel series calculate button code//
         private void button7_Click_1(object sender, EventArgs e)
         {
@@ -597,16 +577,11 @@ namespace WindowsFormsApp2
             r2 = 1 / r1;
             label3.Text = Convert.ToString(r2);
         }
-
-
-
-
-
         //Parallel circuit numerical restriction code//
 
         private void textBox15_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -619,7 +594,7 @@ namespace WindowsFormsApp2
 
         private void textBox16_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -633,7 +608,7 @@ namespace WindowsFormsApp2
 
         private void textBox17_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -646,7 +621,7 @@ namespace WindowsFormsApp2
 
         private void textBox18_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -659,8 +634,9 @@ namespace WindowsFormsApp2
 
         private void textBox19_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
-            {
+            if (isNum(e))
+
+			{
                 e.Handled = false;
             }
 
@@ -672,7 +648,7 @@ namespace WindowsFormsApp2
 
         private void textBox20_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -685,7 +661,7 @@ namespace WindowsFormsApp2
 
         private void textBox21_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -698,7 +674,7 @@ namespace WindowsFormsApp2
 
         private void textBox22_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -711,7 +687,7 @@ namespace WindowsFormsApp2
 
         private void textBox23_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -724,7 +700,7 @@ namespace WindowsFormsApp2
 
         private void textBox24_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -737,7 +713,7 @@ namespace WindowsFormsApp2
 
         private void textBox25_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -750,7 +726,7 @@ namespace WindowsFormsApp2
 
         private void textBox26_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -763,7 +739,7 @@ namespace WindowsFormsApp2
 
         private void textBox27_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
@@ -776,7 +752,7 @@ namespace WindowsFormsApp2
 
         private void textBox28_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            if (isNum(e))
             {
                 e.Handled = false;
             }
