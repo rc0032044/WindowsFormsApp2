@@ -17,14 +17,12 @@ namespace WindowsFormsApp2
             Hideall();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void Hideall()
         {
-            label1.Hide();
+/*this is a method that will hide all user interface elements and enabling me 
+ * to only show what is needed by the user*/
+			label1.Hide();
             button1.Hide();
             comboBox1.Hide();
             label2.Hide();
@@ -76,10 +74,23 @@ namespace WindowsFormsApp2
             button10.Hide();
         }
 
+        private void seriesToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+         /* this code is for hiding all elements and only showing button1 when 
+          * series is selected from the drop down menu*/
+			Hideall();
+            button1.Show();
+        }
+
 
         private async void button1_Click_1(object sender, EventArgs e)
         {
-            label1.Show();
+/* this code is for the formulae for the calculation selected by the user to
+ * show up in a label when button1 is clicked*/
+
+//this code also makes combobox1 flash twice so that the user knows to select a value from the index
+
+			label1.Show();
             await Task.Delay(500);
             comboBox1.Show();
             await Task.Delay(250);
@@ -92,34 +103,16 @@ namespace WindowsFormsApp2
             comboBox1.Show();
 
         }
-        private void parellelToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Hideall();
-            button1.Show();
-        }
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-        }
-        private async void button2_Click(object sender, EventArgs e)
-        {
-            label2.Show();
-            await Task.Delay(500);
-            comboBox2.Show();
-            await Task.Delay(250);
-            comboBox2.Hide();
-            await Task.Delay(500);
-            comboBox2.Show();
-            await Task.Delay(250);
-            comboBox2.Hide();
-            await Task.Delay(500);
-            comboBox2.Show();
 
-        }
-// Series circuit code //
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+			/*this code is for what element a shown when different index's are selected from the combobox*/
+
             if (comboBox1.SelectedIndex == 0)
             {
+				/*this code will hide all element and only show what is needed by the user when
+				 * they select the calculatore for series circuit with 2 resistors*/
+
                 Hideall();
                 button1.Show();
                 label1.Show();
@@ -133,7 +126,9 @@ namespace WindowsFormsApp2
 
             else if (comboBox1.SelectedIndex == 1)
             {
-                Hideall();
+				/*this code will hide all element and only show what is needed by the user when
+				 * they select the calculatore for series circuit with 3 resistors*/
+				Hideall();
                 button1.Show();
                 label1.Show();
                 comboBox1.Show();
@@ -149,7 +144,9 @@ namespace WindowsFormsApp2
 
             else if (comboBox1.SelectedIndex == 2)
             {
-                Hideall();
+				/*this code will hide all element and only show what is needed by the user when
+				 * they select the calculatore for series circuit with 4 resistors*/
+				Hideall();
                 button1.Show();
                 label1.Show();
                 comboBox1.Show();
@@ -167,7 +164,10 @@ namespace WindowsFormsApp2
 
             else if (comboBox1.SelectedIndex == 3)
             {
-                Hideall();
+				/*this code will hide all element and only show what is needed by the user when
+				 * they select the calculatore for series circuit with 5 resistors*/
+
+				Hideall();
                 button1.Show();
                 label1.Show();
                 comboBox1.Show();
@@ -187,25 +187,39 @@ namespace WindowsFormsApp2
 
             else
             {
+				/*this code is for showing a message to the user if they
+				 * dont select anything from the combobox*/
+
                 MessageBox.Show("Please select an option from the drop down menu!");
             }
         }
 
-        private void seriesToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private async void button2_Click(object sender, EventArgs e)
         {
-            Hideall();
-            button1.Show();
-        }
+/* this code is for the formulae for the calculation selected by the user to
+ * show up in a label when button2 is clicked*/
 
-        private void parallelToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Hideall();
-            button2.Show();
-        }
+//this code also makes combobox2 flash twice so that the user knows to select a value from the index
+			label2.Show();
+            await Task.Delay(500);
+            comboBox2.Show();
+            await Task.Delay(250);
+            comboBox2.Hide();
+            await Task.Delay(500);
+            comboBox2.Show();
+            await Task.Delay(250);
+            comboBox2.Hide();
+            await Task.Delay(500);
+            comboBox2.Show();
+
+        }   
+
 // Series circuit calculate button code //
         private void button3_Click(object sender, EventArgs e)
 
         {
+			/* this code converts strings textboxes 1 & 2 into doubles*/
+			
             double r1 = Convert.ToDouble(textBox1.Text);
             double r2 = Convert.ToDouble(textBox2.Text);
 

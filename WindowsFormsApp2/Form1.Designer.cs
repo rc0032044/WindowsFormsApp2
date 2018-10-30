@@ -238,7 +238,7 @@
 			this.parallelToolStripMenuItem.Name = "parallelToolStripMenuItem";
 			this.parallelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.parallelToolStripMenuItem.Text = "Parallel";
-			this.parallelToolStripMenuItem.Click += new System.EventHandler(this.parallelToolStripMenuItem_Click);
+			//this.parallelToolStripMenuItem.Click += new System.EventHandler(this.parallelToolStripMenuItem_Click);
 			// 
 			// potentialDifferenceToolStripMenuItem
 			// 
