@@ -82,8 +82,13 @@ namespace WindowsFormsApp2
             button1.Show();
         }
 
+		private void parallelToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Hideall();
+			button1.Show();
+		}
 
-        private async void button1_Click_1(object sender, EventArgs e)
+		private async void button1_Click_1(object sender, EventArgs e)
         {
 /* this code is for the formulae for the calculation selected by the user to
  * show up in a label when button1 is clicked*/
