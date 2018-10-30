@@ -219,24 +219,38 @@ private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
 
         }   
 
-// Series circuit calculate button code //
+
+
+		// Series circuit calculate button code 
         private void button3_Click(object sender, EventArgs e)
 
         {
 			/* this code converts strings textboxes 1 & 2 into doubles*/
-			
-            double r1 = Convert.ToDouble(textBox1.Text);
-            double r2 = Convert.ToDouble(textBox2.Text);
+			/*also diplays a message box telling user to input a number 
+			 * if there is nothing entered into any of textboxes*/
 
-            r1 = r1 + r2;
+			try
+			{
+				double r1 = Convert.ToDouble(textBox1.Text);
+				double r2 = Convert.ToDouble(textBox2.Text);
 
-            label3.Text = Convert.ToString(r1);
-        }
+				r1 = r1 + r2;
+
+				label3.Text = Convert.ToString(r1);
+			}
+			catch
+			{
+				MessageBox.Show("dont be an idiot. type in a number");
+			}
+		}
 
         private void button4_Click(object sender, EventArgs e)
         {
-            try
-            {
+			/* this code converts strings textboxes 3 & 4 & 5 into doubles*/
+			/*also diplays a message box telling user to input a number 
+			 * if there is nothing entered into any of textboxes*/
+			try
+			{
                 double r1 = Convert.ToDouble(textBox3.Text);
                 double r2 = Convert.ToDouble(textBox4.Text);
                 double r3 = Convert.ToDouble(textBox5.Text);
@@ -252,30 +266,59 @@ private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
 
         private void button5_Click(object sender, EventArgs e)
         {
-            double r1 = Convert.ToDouble(textBox6.Text);
-            double r2 = Convert.ToDouble(textBox7.Text);
-            double r3 = Convert.ToDouble(textBox8.Text);
-            double r4 = Convert.ToDouble(textBox9.Text);
+			/* this code converts strings textboxes 6 & 7 & 8 & 9 into doubles*/
+			/*also diplays a message box telling user to input a number 
+			 * if there is nothing entered into any of textboxes*/
+			try
+			{
+				double r1 = Convert.ToDouble(textBox6.Text);
+				double r2 = Convert.ToDouble(textBox7.Text);
+				double r3 = Convert.ToDouble(textBox8.Text);
+				double r4 = Convert.ToDouble(textBox9.Text);
 
-            r1 = r1 + r2 + r3 + r4;
+				r1 = r1 + r2 + r3 + r4;
 
-            label3.Text = Convert.ToString(r1);
-        }
+				label3.Text = Convert.ToString(r1);
+			}
+			catch
+			{
+				MessageBox.Show("dont be an idiot. type in a number");
+			}
+		}
 
         private void button6_Click(object sender, EventArgs e)
         {
-            double r1 = Convert.ToDouble(textBox10.Text);
-            double r2 = Convert.ToDouble(textBox11.Text);
-            double r3 = Convert.ToDouble(textBox12.Text);
-            double r4 = Convert.ToDouble(textBox13.Text);
-            double r5 = Convert.ToDouble(textBox14.Text);
+			/* this code converts strings textboxes 10 & 11 & 12 & 13 & 14 into doubles*/
+			/*also diplays a message box telling user to input a number 
+			 * if there is nothing entered into any of textboxes*/
+			try
+			{
+				double r1 = Convert.ToDouble(textBox10.Text);
+				double r2 = Convert.ToDouble(textBox11.Text);
+				double r3 = Convert.ToDouble(textBox12.Text);
+				double r4 = Convert.ToDouble(textBox13.Text);
+				double r5 = Convert.ToDouble(textBox14.Text);
 
-            r1 = r1 + r2 + r3 + r4 + r5;
+				r1 = r1 + r2 + r3 + r4 + r5;
 
-            label3.Text = Convert.ToString(r1);
-        }
-// Series circuit numerical restriction //
+				label3.Text = Convert.ToString(r1);
+			}
+			catch
+			{
+				MessageBox.Show("dont be an idiot. type in a number");
+			}
+		}
 
+
+		// Series circuit numerical restriction 
+
+        private static bool isNum(KeyPressEventArgs e)
+		{
+			/*this is a method that allows the line of code below to be 
+			 * easily repeated rather than keep typing it out*/
+
+			return (e.KeyChar >= '0' && e.KeyChar <= '9') || e.KeyChar == '.' || e.KeyChar == 8;
+		}
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			if (isNum(e))
@@ -289,10 +332,7 @@ private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
 			}
 		}
 
-		private static bool isNum(KeyPressEventArgs e)
-		{
-			return (e.KeyChar >= '0' && e.KeyChar <= '9') || e.KeyChar == '.' || e.KeyChar == 8;
-		}
+		
 
 		private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -469,7 +509,10 @@ private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (comboBox2.SelectedIndex == 0)
             {
-                Hideall();
+				/*this code will hide all element and only show what is needed by the user when
+				 * they select the calculatore for parallel circuit with 2 resistors*/
+
+				Hideall();
                 button2.Show();
                 label2.Show();
                 comboBox2.Show();
@@ -487,7 +530,10 @@ private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
 
             else if (comboBox2.SelectedIndex == 1)
             {
-                Hideall();
+				/*this code will hide all element and only show what is needed by the user when
+				 * they select the calculatore for parallel circuit with 3 resistors*/
+
+				Hideall();
                 button2.Show();
                 label2.Show();
                 comboBox2.Show();
@@ -503,7 +549,10 @@ private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
 
             else if (comboBox2.SelectedIndex == 2)
             {
-                Hideall();
+				/*this code will hide all element and only show what is needed by the user when
+				 * they select the calculatore for parallel circuit with 4 resistors*/
+
+				Hideall();
                 button2.Show();
                 label2.Show();
                 comboBox2.Show();
@@ -521,7 +570,10 @@ private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
 
             else if (comboBox2.SelectedIndex == 3)
             {
-                Hideall();
+				/*this code will hide all element and only show what is needed by the user when
+				 * they select the calculatore for parallel circuit with 5 resistors*/
+
+				Hideall();
                 button2.Show();
                 label2.Show();
                 comboBox2.Show();
@@ -542,60 +594,92 @@ private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
 
             else
             {
-                MessageBox.Show("Please select an option from the drop down menu!");
+				/*this code is for showing a message to the user if they
+				 * dont select anything from the combobox*/
+
+				MessageBox.Show("Please select an option from the drop down menu!");
             }
         }
 //Parallel series calculate button code//
         private void button7_Click_1(object sender, EventArgs e)
         {
             {
-                double r1 = Convert.ToDouble(textBox15.Text);
-                double r2 = Convert.ToDouble(textBox16.Text);
+				try
+				{
+					double r1 = Convert.ToDouble(textBox15.Text);
+					double r2 = Convert.ToDouble(textBox16.Text);
 
-                r1 = (1 / r1) + (1 / r2);
-                r2 = 1 / r1;
+					r1 = (1 / r1) + (1 / r2);
+					r2 = 1 / r1;
 
 
-                label3.Text = Convert.ToString(r2);
-            }
+					label3.Text = Convert.ToString(r2);
+				}
+				catch
+				{
+					MessageBox.Show("dont be an idiot. type in a number");
+				}
+			}
 
         }
 
         private void button8_Click_1(object sender, EventArgs e)
         {
-            double r1 = Convert.ToDouble(textBox17.Text);
-            double r2 = Convert.ToDouble(textBox18.Text);
-            double r3 = Convert.ToDouble(textBox19.Text);
+			try
+			{
+				double r1 = Convert.ToDouble(textBox17.Text);
+				double r2 = Convert.ToDouble(textBox18.Text);
+				double r3 = Convert.ToDouble(textBox19.Text);
 
-            r1 = 1 / r1 + 1 / r2 + 1 / r3;
-            r2 = 1 / r1;
-            label3.Text = Convert.ToString(r2);
-        }
+				r1 = 1 / r1 + 1 / r2 + 1 / r3;
+				r2 = 1 / r1;
+				label3.Text = Convert.ToString(r2);
+			}
+			catch
+			{
+				MessageBox.Show("dont be an idiot. type in a number");
+			}
+		}
 
         private void button9_Click_1(object sender, EventArgs e)
         {
-            double r1 = Convert.ToDouble(textBox20.Text);
-            double r2 = Convert.ToDouble(textBox21.Text);
-            double r3 = Convert.ToDouble(textBox22.Text);
-            double r4 = Convert.ToDouble(textBox23.Text);
+			try
+			{
+				double r1 = Convert.ToDouble(textBox20.Text);
+				double r2 = Convert.ToDouble(textBox21.Text);
+				double r3 = Convert.ToDouble(textBox22.Text);
+				double r4 = Convert.ToDouble(textBox23.Text);
 
-            r1 = 1 / r1 + 1 / r2 + 1 / r3 + 1 / r4;
-            r2 = 1 / r1;
-            label3.Text = Convert.ToString(r2);
-        }
+				r1 = 1 / r1 + 1 / r2 + 1 / r3 + 1 / r4;
+				r2 = 1 / r1;
+				label3.Text = Convert.ToString(r2);
+			}
+			catch
+			{
+				MessageBox.Show("dont be an idiot. type in a number");
+			}
+		}
 
         private void button10_Click_1(object sender, EventArgs e)
         {
-            double r1 = Convert.ToDouble(textBox24.Text);
-            double r2 = Convert.ToDouble(textBox25.Text);
-            double r3 = Convert.ToDouble(textBox26.Text);
-            double r4 = Convert.ToDouble(textBox27.Text);
-            double r5 = Convert.ToDouble(textBox28.Text);
+			try
+			{
+				double r1 = Convert.ToDouble(textBox24.Text);
+				double r2 = Convert.ToDouble(textBox25.Text);
+				double r3 = Convert.ToDouble(textBox26.Text);
+				double r4 = Convert.ToDouble(textBox27.Text);
+				double r5 = Convert.ToDouble(textBox28.Text);
 
-            r1 = 1 / r1 + 1 / r2 + 1 / r3 + 1 / r4 + 1 / r5;
-            r2 = 1 / r1;
-            label3.Text = Convert.ToString(r2);
-        }
+				r1 = 1 / r1 + 1 / r2 + 1 / r3 + 1 / r4 + 1 / r5;
+				r2 = 1 / r1;
+				label3.Text = Convert.ToString(r2);
+			}
+			catch
+			{
+				MessageBox.Show("dont be an idiot. type in a number");
+			}
+		}
+
         //Parallel circuit numerical restriction code//
 
         private void textBox15_KeyPress(object sender, KeyPressEventArgs e)
